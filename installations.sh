@@ -61,6 +61,9 @@ rbenv install 2.3.4
 rbenv local 2.3.4
 ruby --version
 
+# Ruby gems
+sudo apt-get install rubygems
+
 # Bundler
 gem install bundler
 # Check

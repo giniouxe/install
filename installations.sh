@@ -1,3 +1,7 @@
+# Terminator
+sudo apt-get update
+sudo apt-get install terminator
+
 # ZSH
 sudo apt-get install zsh
 zsh --version

@@ -90,7 +90,7 @@ docker --version
 docker-compose --version
 
 # Image magick
-sudo apt-get update && apt-get install ghostscript imagemagick
+sudo apt-get update && sudo apt-get install ghostscript imagemagick
 # Check
 magick --version
 
@@ -100,11 +100,14 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 sudo apt-get update && \
-  apt-get install python-software-properties && \
-  add-apt-repository ppa:jerome-etienne/neoip && \
-  apt-get update && \
-  apt-get install nodejs && \
-  apt-get install yarn
+  sudo apt-get install python-software-properties && \
+  sudo apt-get update && \
+  sudo apt-get install nodejs npm && \
+  sudo apt-get install yarn
+
+sudo ln -s /usr/bin/nodejs /usr/local/bin/node
+sudo ln -s /usr/bin/npm /usr/local/bin/npm
+
 # Check
 node --version
 yarn --version

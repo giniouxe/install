@@ -2,6 +2,9 @@
 sudo apt-get update
 sudo apt-get install terminator
 
+# Git
+sudo apt-get install git
+
 # ZSH
 sudo apt-get install zsh
 zsh --version

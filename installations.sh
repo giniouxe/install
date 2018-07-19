@@ -10,6 +10,9 @@ sudo apt-get install zsh
 zsh --version
 chsh -s $(which zsh)
 
+# Oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # ZSH autosuggestions
 mkdir ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions

@@ -10,6 +10,9 @@ sudo apt-get install zsh
 zsh --version
 chsh -s $(which zsh)
 
+# curl
+sudo apt install curl
+
 # Oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 

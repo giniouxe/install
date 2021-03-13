@@ -52,6 +52,8 @@ sudo apt-get install libreoffice
 # Rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 # (optional)
+sudo apt-get install gcc
+sudo apt-get install make
 cd ~/.rbenv && src/configure && make -C src
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
 ~/.rbenv/bin/rbenv init

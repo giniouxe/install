@@ -49,28 +49,16 @@ sudo add-apt-repository ppa:libreoffice/ppa
 sudo apt-get update
 sudo apt-get install libreoffice
 
-# Rbenv
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-# (optional)
-sudo apt-get install gcc
-sudo apt-get install make
-cd ~/.rbenv && src/configure && make -C src
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-~/.rbenv/bin/rbenv init
-# Restart your shell
-# Check:
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+# ASDF
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 
-# Ruby build
-# As an rbenv plugin
-$ mkdir -p "$(rbenv root)"/plugins
-$ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+# Enable the plugin by adding it to your plugins definition in ~/.zshrc.
+plugins=(asdf)
+asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
-# Ruby 2.3.4 (JT)
-rbenv install -l
-rbenv install 2.3.4
-rbenv local 2.3.4
-ruby --version
+# check versions to install in projets
+asdf install ruby 2.7.2
+asdf global ruby 2.7.2
 
 # Ruby gems
 sudo apt-get install rubygems
@@ -86,10 +74,11 @@ gem install foreman
 foreman --version
 
 # Elixir
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
-sudo apt-get update
-sudo apt-get install esl-erlang
-sudo apt-get install elixir
+asdf plugin add erlang
+asdf install erlang 23.2
+asdf plugin add elixir
+asdf install elixir 1.10
+asdf global elixir 1.10
 
 # Docker
 sudo apt-get install docker docker-compose
@@ -130,6 +119,4 @@ sudo apt-get update
 sudo apt-get install spotify-client
 
 # F.lux
-sudo add-apt-repository ppa:nathan-renniewaldock/flux
-sudo apt-get update
-sudo apt-get install fluxgui
+sudo add-apt-repository ppa:nathan-renniewaldock/flux && sudo apt-get update && sudo apt-get install fluxgui
